@@ -30,6 +30,25 @@
 
 ---
 
+## 講義連結
+
+- [Links](https://drive.google.com/file/d/1s0lin3w3Crn6KOoJZiqjQLjAITAxalUz/view?usp=drive_link)
+
+---
+
+## 關閉(開啟) VS Code 的 AI Copilot
+為避免 AI Copilot 打擾練習，這邊附上關閉特定程式語言的 AI copilot 的方法
+
+1. 點擊 `VS Code` 右下角的 `{}`
+2. 點擊第一個 `Completions` 的 `Open Menu`
+
+![disable copilot 01](./sources/disable_ai_copilot_01.jpg)
+
+3. 點擊第一項 `Enable/Disable Completions` 進行關閉 (開啟)
+
+![disable copilot 02](./sources/disable_ai_copilot_02.jpg)
+---
+
 ## 🚀 如何執行
 
 1. 確認已安裝 **C++14** 或以上版本的編譯器（如 `g++`, `clang++`）。
@@ -66,9 +85,11 @@
 
 ## 📌 待辦事項
 
-* [ ] 完成 **Ch02** 所有練習題
-* [ ] 完成 **Ch03** 所有練習題
+* [ ] 完成 **Ch08** 所有練習題
 * [ ] 持續更新章節目錄與程式碼
-* [ ] 撰寫每章的學習心得與重點
 
 ---
+
+## References
+
+- https://github.com/DercyCheng/CPP/tree/main
