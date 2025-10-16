@@ -30,9 +30,13 @@
 
 ---
 
-## 講義連結
+## 連結
 
-- [Links](https://drive.google.com/file/d/1s0lin3w3Crn6KOoJZiqjQLjAITAxalUz/view?usp=drive_link)
+- 講義連結
+  - [Links](https://drive.google.com/file/d/1s0lin3w3Crn6KOoJZiqjQLjAITAxalUz/view?usp=drive_link)
+
+- C++ 與 VSCode C++ 環境布署教學連結
+  - [C++ 與 VSCode C++ 環境布署教學](https://github.com/kent1201/VSCode-)
 
 ---
 
