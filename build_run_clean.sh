@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# 用法示例：
+#   ./run.sh                 # 使用 CMakeLists.txt 裡的預設 ENTRY_CODE（ch06/01.cpp）
+#   ./run.sh ch07/02.cpp     # 改成編譯 ch07/02.cpp
+
+# 第 1 個參數：要編譯的程式碼檔案（相對於專案根目錄）
+ENTRY_CODE_ARG=""
+if [[ $# -ge 1 ]]; then
+  ENTRY_CODE="$1"
+  ENTRY_CODE_ARG="-DENTRY_CODE=$ENTRY_CODE"
+  echo "Using ENTRY_CODE = $ENTRY_CODE"
+else
+  echo "Using default ENTRY_CODE from CMakeLists.txt"
+fi
+
 # 可調整參數
 BUILD_DIR="${BUILD_DIR:-build}"
 BIN_DIR="${BIN_DIR:-bin}"
@@ -13,8 +27,10 @@ if command -v ninja >/dev/null 2>&1 && [[ -z "${GEN}" ]]; then
 fi
 
 echo "==> Configure"
-cmake -S . -B "$BUILD_DIR" $GEN -DCMAKE_BUILD_TYPE="$CONFIG" \
-  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY="$PWD/$BIN_DIR"
+cmake -S . -B "$BUILD_DIR" $GEN \
+  -DCMAKE_BUILD_TYPE="$CONFIG" \
+  -DCMAKE_RUNTIME_OUTPUT_DIRECTORY="$PWD/$BIN_DIR" \
+  $ENTRY_CODE_ARG
 
 echo "==> Build"
 cmake --build "$BUILD_DIR" --config "$CONFIG" -j

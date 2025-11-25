@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
-project(HelloCMake CXX)
+project(CppPrimerPlusPractice CXX)
 
 ## 0) 決定要編譯哪個程式碼檔案（可用變數或其他方式）
-set(ENTRY_CODE "ch06/01.cpp")
+set(ENTRY_CODE "ch06/01.cpp" CACHE STRING "Entry source file")
 
 # 1) 語言標準（專案級）
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -16,7 +16,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 
 # 4) 定義 target（可執行檔/函式庫）
-add_executable(main ENTRY_CODE)
+add_executable(main "${ENTRY_CODE}")
 
 # 5) target 的編譯選項/定義/包含路徑（目標導向）
 target_compile_options(main PRIVATE -Wall -Wextra -Wpedantic)
